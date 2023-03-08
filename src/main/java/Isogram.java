@@ -1,4 +1,4 @@
-
+import java.util.HashSet;
 public class Isogram {
     /**
      * An Isogram is a word where no letters are repeated. You may assume that there will only be lowercase
@@ -13,6 +13,15 @@ public class Isogram {
      * @return true if str is an isogram, false otherwise.
      */
     public boolean isIsogram(String str){
-        return false;
+        HashSet<Character> unique = new HashSet<Character>();
+        char[] arr = str.toCharArray();
+        for(char c : arr) {
+            if(unique.contains(c)) {
+                return false;
+            } else {
+                unique.add(c);
+            }
+        }
+        return true;
     }
 }
